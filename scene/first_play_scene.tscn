@@ -24,12 +24,12 @@ load_path = "res://.godot/imported/mute.png-affa619231c60846d41cdbde984393d2.cte
 
 [sub_resource type="LabelSettings" id="LabelSettings_v8qb6"]
 font = ExtResource("8_72fao")
-font_size = 28
+font_size = 54
 font_color = Color(0.2, 0.11764706, 0.039215688, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_tgrpi"]
 font = ExtResource("8_72fao")
-font_size = 20
+font_size = 40
 font_color = Color(0.2, 0.11764706, 0.039215688, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oklu1"]
@@ -42,36 +42,9 @@ corner_detail = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_7bvtv"]
 font = ExtResource("8_72fao")
-font_size = 69
+font_size = 84
 outline_size = 16
 outline_color = Color(0.11119685, 0.11119684, 0.11119684, 1)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7bvtv"]
-particles_animation = true
-particles_anim_h_frames = 5
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="Gradient" id="Gradient_gnm83"]
-offsets = PackedFloat32Array(0, 0.1468254, 0.8373016, 0.99206346)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_oklu1"]
-gradient = SubResource("Gradient_gnm83")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v8qb6"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(580, 320, 1)
-spread = 20.0
-initial_velocity_min = 20.0
-initial_velocity_max = 80.0
-angular_velocity_min = -1.6093254e-05
-angular_velocity_max = 49.99998
-gravity = Vector3(0, 10, 0)
-scale_max = 2.2
-color_ramp = SubResource("GradientTexture1D_oklu1")
-anim_offset_max = 1.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_croyb"]
 particles_animation = true
@@ -79,7 +52,34 @@ particles_anim_h_frames = 5
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r5jkw"]
+[sub_resource type="Gradient" id="Gradient_r5jkw"]
+offsets = PackedFloat32Array(0, 0.1468254, 0.8373016, 0.99206346)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xl6ew"]
+gradient = SubResource("Gradient_r5jkw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_duicc"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 540, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 49.99998
+gravity = Vector3(0, 10, 0)
+scale_max = 2.2
+color_ramp = SubResource("GradientTexture1D_xl6ew")
+anim_offset_max = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ar5k3"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_us1fy"]
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(580, 320, 1)
@@ -90,7 +90,7 @@ angular_velocity_min = -1.6093254e-05
 angular_velocity_max = 49.99998
 gravity = Vector3(0, 10, 0)
 scale_max = 2.2
-color_ramp = SubResource("GradientTexture1D_oklu1")
+color_ramp = SubResource("GradientTexture1D_xl6ew")
 anim_offset_max = 1.0
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_cjj5q"]
@@ -112,11 +112,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_01aso")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="SoundButton" type="TextureButton" parent="CanvasLayer" unique_id=1285570517]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(120, 120)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -138,8 +136,6 @@ offset_top = 28.0
 offset_right = 128.0
 offset_bottom = 108.0
 texture_normal = ExtResource("2_dad7c")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="Leaf" type="TextureRect" parent="CanvasLayer" unique_id=506398363]
 custom_minimum_size = Vector2(500, 300)
@@ -148,15 +144,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -150.0
-offset_right = 250.0
-offset_bottom = 150.0
+offset_left = -355.0
+offset_top = -230.0
+offset_right = 363.0
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_uc2pu")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="LadyBird" type="TextureRect" parent="CanvasLayer/Leaf" unique_id=1872430890]
 custom_minimum_size = Vector2(80, 80)
@@ -166,15 +160,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -106.0
-offset_right = -90.0
-offset_bottom = -26.0
+offset_left = -218.0
+offset_top = -123.5
+offset_right = -97.0
+offset_bottom = -4.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_em1ev")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="LadyBird2" type="TextureRect" parent="CanvasLayer/Leaf" unique_id=523755382]
 custom_minimum_size = Vector2(80, 80)
@@ -184,14 +176,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -114.0
-offset_bottom = -34.0
+offset_left = -81.0
+offset_top = -137.5
+offset_right = 40.0
+offset_bottom = -18.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_em1ev")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="LadyBird3" type="TextureRect" parent="CanvasLayer/Leaf" unique_id=770048453]
 custom_minimum_size = Vector2(80, 80)
@@ -201,15 +192,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 14.0
-offset_top = -113.0
-offset_right = 94.0
-offset_bottom = -33.0
+offset_left = 76.0
+offset_top = -117.5
+offset_right = 156.0
+offset_bottom = -37.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_em1ev")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="LadyBird4" type="TextureRect" parent="CanvasLayer/Leaf" unique_id=225448236]
 custom_minimum_size = Vector2(80, 80)
@@ -219,15 +208,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -17.0
-offset_right = -90.0
-offset_bottom = 63.0
+offset_left = -179.0
+offset_top = 15.5
+offset_right = -99.0
+offset_bottom = 95.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_em1ev")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="LadyBird5" type="TextureRect" parent="CanvasLayer/Leaf" unique_id=507545149]
 custom_minimum_size = Vector2(80, 80)
@@ -237,15 +224,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -16.0
-offset_right = 9.0
-offset_bottom = 64.0
+offset_left = -67.0
+offset_top = -5.5
+offset_right = 54.0
+offset_bottom = 113.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_em1ev")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="LadyBird6" type="TextureRect" parent="CanvasLayer/Leaf" unique_id=280893842]
 custom_minimum_size = Vector2(80, 80)
@@ -255,29 +240,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 24.0
-offset_top = -20.0
-offset_right = 104.0
-offset_bottom = 60.0
+offset_left = 66.0
+offset_top = -8.5
+offset_right = 187.0
+offset_bottom = 110.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_em1ev")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="Character" type="TextureRect" parent="CanvasLayer" unique_id=1914222496]
 custom_minimum_size = Vector2(200, 400)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 139.0
-offset_top = -401.0
-offset_right = 339.0
-offset_bottom = -1.0
+offset_left = 180.0
+offset_top = -482.0
+offset_right = 380.0
+offset_bottom = -82.0
 grow_vertical = 0
 texture = ExtResource("5_em1ev")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="Banner" type="TextureRect" parent="CanvasLayer" unique_id=830889828]
 custom_minimum_size = Vector2(550, 150)
@@ -289,8 +270,6 @@ offset_right = 250.0
 offset_bottom = 150.0
 grow_horizontal = 2
 texture = ExtResource("7_tgrpi")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="Question" type="Label" parent="CanvasLayer/Banner" unique_id=1532099359]
 visible = false
@@ -312,10 +291,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -222.0
-offset_top = 79.0
-offset_right = 218.0
-offset_bottom = 107.0
+offset_left = -241.0
+offset_top = 103.0
+offset_right = 211.0
+offset_bottom = 144.0
 grow_horizontal = 2
 text = "Tap the right number!"
 label_settings = SubResource("LabelSettings_tgrpi")
@@ -337,7 +316,7 @@ grow_vertical = 0
 alignment = 1
 
 [node name="AnswerBox1" type="Panel" parent="CanvasLayer/HBoxContainer" unique_id=1321179246]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oklu1")
 
@@ -367,7 +346,7 @@ grow_vertical = 2
 flat = true
 
 [node name="AnswerBox2" type="Panel" parent="CanvasLayer/HBoxContainer" unique_id=576511269]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oklu1")
 
@@ -397,7 +376,7 @@ grow_vertical = 2
 flat = true
 
 [node name="AnswerBox3" type="Panel" parent="CanvasLayer/HBoxContainer" unique_id=263014041]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oklu1")
 
@@ -427,7 +406,7 @@ grow_vertical = 2
 flat = true
 
 [node name="AnswerBox4" type="Panel" parent="CanvasLayer/HBoxContainer" unique_id=1006494752]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oklu1")
 
@@ -456,29 +435,29 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="LeafParticle" type="GPUParticles2D" parent="CanvasLayer" unique_id=2113388721]
-material = SubResource("CanvasItemMaterial_7bvtv")
-position = Vector2(578, 317)
+[node name="LeafParticle4" type="GPUParticles2D" parent="CanvasLayer" unique_id=1635672874]
+material = SubResource("CanvasItemMaterial_croyb")
+position = Vector2(940, 537)
 amount = 40
 texture = ExtResource("11_fhtop")
-visibility_rect = Rect2(-580, -320, 1160, 640)
-process_material = SubResource("ParticleProcessMaterial_v8qb6")
+visibility_rect = Rect2(-960, -540, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_duicc")
 
-[node name="LeafParticle2" type="GPUParticles2D" parent="CanvasLayer" unique_id=1812967141]
-material = SubResource("CanvasItemMaterial_croyb")
-position = Vector2(578, 317)
+[node name="LeafParticle5" type="GPUParticles2D" parent="CanvasLayer" unique_id=304225566]
+material = SubResource("CanvasItemMaterial_ar5k3")
+position = Vector2(940, 537)
 amount = 40
 texture = ExtResource("10_7xlgc")
-visibility_rect = Rect2(-580, -320, 1160, 640)
-process_material = SubResource("ParticleProcessMaterial_r5jkw")
+visibility_rect = Rect2(-960, -540, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_us1fy")
 
-[node name="LeafParticle3" type="GPUParticles2D" parent="CanvasLayer" unique_id=708239249]
-material = SubResource("CanvasItemMaterial_7bvtv")
-position = Vector2(578, 317)
+[node name="LeafParticle6" type="GPUParticles2D" parent="CanvasLayer" unique_id=2033630712]
+material = SubResource("CanvasItemMaterial_croyb")
+position = Vector2(940, 537)
 amount = 40
 texture = ExtResource("11_qjsta")
-visibility_rect = Rect2(-580, -320, 1160, 640)
-process_material = SubResource("ParticleProcessMaterial_v8qb6")
+visibility_rect = Rect2(-960, -540, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_duicc")
 
 [node name="PressedSound" type="AudioStreamPlayer" parent="." unique_id=1565061586]
 stream = SubResource("AudioStreamWAV_cjj5q")

@@ -1,12 +1,12 @@
 extends Node
 
 var music_player: AudioStreamPlayer
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
-
 	music_player.stream = preload("res://assets/sound/edugamery-music-7.mp3")
+	music_player.volume_db = -15.0  # lower this to make it quieter (e.g. -20, -30)
 	music_player.play()
 
 func toggle_music() -> void:
