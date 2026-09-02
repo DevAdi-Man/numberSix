@@ -1,0 +1,276 @@
+[gd_scene format=3 uid="uid://bho4gxy5bvt1l"]
+
+[ext_resource type="Script" uid="uid://dnbkxbmw35cye" path="res://scene/main.gd" id="1_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://ds4me7vlg4coy" path="res://assets/background/background.png" id="1_itxqv"]
+[ext_resource type="Texture2D" uid="uid://6vobxcjsdw5u" path="res://assets/Character.png" id="2_v0l8b"]
+[ext_resource type="FontFile" uid="uid://dwqqnfk5tvia4" path="res://assets/fonts/flappyfont.TTF" id="3_brvut"]
+[ext_resource type="Texture2D" uid="uid://bre82p58xcvoj" path="res://assets/ui/firstscreen_Card_background.png" id="3_wp4xf"]
+[ext_resource type="Texture2D" uid="uid://c231lwtwlxpft" path="res://assets/ui/playButtonBG.png" id="5_4j5ol"]
+[ext_resource type="Texture2D" uid="uid://4omr80r7q0vo" path="res://assets/ui/play.png" id="6_p1hux"]
+[ext_resource type="Texture2D" uid="uid://c8g5x32dytp3g" path="res://assets/ui/sound.png" id="7_of57s"]
+[ext_resource type="Texture2D" uid="uid://cft8d3i1vebam" path="res://assets/ui/mute.png" id="8_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://75u27vbpl67l" path="res://assets/ui/ELR_FallLeaf.png" id="10_mswub"]
+[ext_resource type="AudioStream" uid="uid://deqfgji5lf00t" path="res://assets/sound/button2.wav" id="10_tqoya"]
+[ext_resource type="Texture2D" uid="uid://bfss2dr4384jw" path="res://assets/ui/ELR_SpringlLeaf.png" id="11_hybxs"]
+[ext_resource type="Texture2D" uid="uid://bki6vh2st6x3r" path="res://assets/ui/ELR_WinterlLeaf.png" id="12_v2gmf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8qb6"]
+font = ExtResource("3_brvut")
+font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bvtv"]
+font = ExtResource("3_brvut")
+font_size = 84
+font_color = Color(1, 0.87058824, 0.34901962, 1)
+outline_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_brvut"]
+font = ExtResource("3_brvut")
+font_size = 54
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ha60"]
+font = ExtResource("3_brvut")
+font_size = 28
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jcbur"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_smf0o"]
+offsets = PackedFloat32Array(0, 0.1468254, 0.8373016, 0.99206346)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oklu1"]
+gradient = SubResource("Gradient_smf0o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tv8i1"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(580, 320, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 49.99998
+gravity = Vector3(0, 10, 0)
+scale_max = 2.2
+color_ramp = SubResource("GradientTexture1D_oklu1")
+anim_offset_max = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0vlqb"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gjnwh"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(580, 320, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 49.99998
+gravity = Vector3(0, 10, 0)
+scale_max = 2.2
+color_ramp = SubResource("GradientTexture1D_oklu1")
+anim_offset_max = 1.0
+
+[node name="Main" type="Node2D" unique_id=242979822]
+script = ExtResource("1_b5f6u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=309416751]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=510272544]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_itxqv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoBackground" type="TextureRect" parent="CanvasLayer" unique_id=373512868]
+custom_minimum_size = Vector2(420, 320)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -202.0
+offset_right = 232.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wp4xf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="CanvasLayer/LogoBackground" unique_id=1541533168]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 42.0
+offset_right = 49.0
+offset_bottom = 65.0
+grow_horizontal = 2
+text = "Let's Learn"
+label_settings = SubResource("LabelSettings_v8qb6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubText" type="Label" parent="CanvasLayer/LogoBackground" unique_id=1478906859]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = -30.0
+offset_right = 124.0
+offset_bottom = 54.0
+grow_vertical = 2
+text = "6"
+label_settings = SubResource("LabelSettings_7bvtv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubText2" type="Label" parent="CanvasLayer/LogoBackground" unique_id=1452801182]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -52.0
+offset_right = 82.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SIX"
+label_settings = SubResource("LabelSettings_brvut")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubText3" type="Label" parent="CanvasLayer/LogoBackground" unique_id=29371062]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 9.0
+offset_right = 176.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The Six Spotted 
+Ladybugs"
+label_settings = SubResource("LabelSettings_0ha60")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character" type="TextureRect" parent="CanvasLayer" unique_id=1210814845]
+custom_minimum_size = Vector2(200, 340)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 182.0
+offset_top = -78.0
+offset_right = 382.0
+offset_bottom = 262.0
+grow_vertical = 2
+texture = ExtResource("2_v0l8b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer" unique_id=760711362]
+custom_minimum_size = Vector2(240, 130)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = 121.0
+offset_right = 124.0
+offset_bottom = 271.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_4j5ol")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PlayButton" unique_id=776472930]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 51.5
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_p1hux")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SoundButton" type="TextureButton" parent="CanvasLayer" unique_id=1169902098]
+custom_minimum_size = Vector2(80, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -159.0
+offset_top = 29.0
+offset_right = -79.0
+offset_bottom = 109.0
+grow_horizontal = 0
+toggle_mode = true
+texture_normal = ExtResource("7_of57s")
+texture_pressed = ExtResource("8_b5f6u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LeafParticle" type="GPUParticles2D" parent="CanvasLayer" unique_id=2068018892]
+material = SubResource("CanvasItemMaterial_jcbur")
+position = Vector2(578, 317)
+amount = 40
+texture = ExtResource("10_mswub")
+visibility_rect = Rect2(-580, -320, 1160, 640)
+process_material = SubResource("ParticleProcessMaterial_tv8i1")
+
+[node name="LeafParticle2" type="GPUParticles2D" parent="CanvasLayer" unique_id=556337042]
+material = SubResource("CanvasItemMaterial_0vlqb")
+position = Vector2(578, 317)
+amount = 40
+texture = ExtResource("11_hybxs")
+visibility_rect = Rect2(-580, -320, 1160, 640)
+process_material = SubResource("ParticleProcessMaterial_gjnwh")
+
+[node name="LeafParticle3" type="GPUParticles2D" parent="CanvasLayer" unique_id=1720285042]
+material = SubResource("CanvasItemMaterial_jcbur")
+position = Vector2(578, 317)
+amount = 40
+texture = ExtResource("12_v2gmf")
+visibility_rect = Rect2(-580, -320, 1160, 640)
+process_material = SubResource("ParticleProcessMaterial_tv8i1")
+
+[node name="PressedSound" type="AudioStreamPlayer" parent="." unique_id=2048762932]
+stream = ExtResource("10_tqoya")
+
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SoundButton" to="." method="_on_sound_button_pressed"]
