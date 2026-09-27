@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blcsffuoxf1kl" path="res://assets/background/background4.png" id="2_p21qf"]
 [ext_resource type="Texture2D" uid="uid://cvea7tjc7ble" path="res://assets/ui/board.png" id="3_xicb8"]
 [ext_resource type="FontFile" uid="uid://dwqqnfk5tvia4" path="res://assets/fonts/flappyfont.TTF" id="4_yyho5"]
-[ext_resource type="Texture2D" uid="uid://cdlto74mglpgp" path="res://assets/ui/backButton.png" id="5_bxf4k"]
+[ext_resource type="Texture2D" uid="uid://bayjqbbgjthi8" path="res://assets/ui/Back.png" id="5_cci6d"]
 [ext_resource type="AudioStream" uid="uid://b2p7h8pji6jk5" path="res://assets/sound/answer.mp3" id="6_6e0vi"]
 [ext_resource type="Texture2D" uid="uid://b4mdsbhblsck4" path="res://assets/character3.png" id="6_bxf4k"]
 [ext_resource type="Texture2D" uid="uid://dgyy4nhdsr0cv" path="res://assets/ui/leaf2.png" id="7_6e0vi"]
@@ -155,12 +155,14 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="BackButton" type="TextureButton" parent="CanvasLayer" unique_id=934022269]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(130, 130)
 offset_left = 48.0
 offset_top = 28.0
 offset_right = 128.0
 offset_bottom = 108.0
-texture_normal = ExtResource("5_bxf4k")
+texture_normal = ExtResource("5_cci6d")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Character" type="TextureRect" parent="CanvasLayer" unique_id=1785424874]
 custom_minimum_size = Vector2(200, 400)
@@ -341,6 +343,24 @@ texture = ExtResource("11_7rdpk")
 visibility_rect = Rect2(-960, -540, 1920, 1080)
 process_material = SubResource("ParticleProcessMaterial_egws0")
 
+[node name="NextButton" type="TextureButton" parent="CanvasLayer" unique_id=488188872]
+custom_minimum_size = Vector2(130, 130)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -177.0
+offset_right = -80.0
+offset_bottom = -47.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_cci6d")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
 [node name="PressedSound" type="AudioStreamPlayer" parent="." unique_id=1525740079]
 stream = SubResource("AudioStreamWAV_7rdpk")
 
@@ -358,3 +378,4 @@ stream = ExtResource("12_leu0k")
 
 [connection signal="pressed" from="CanvasLayer/SoundButton" to="." method="_on_sound_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/NextButton" to="." method="_on_next_button_pressed"]

@@ -10,6 +10,7 @@ extends Node2D
 @onready var question_2_label: Label = $CanvasLayer/Banner/Question2_label
 @onready var question_1: AudioStreamPlayer = $Question1
 @onready var question_2: AudioStreamPlayer = $Question2
+@onready var next_button: TextureButton = $CanvasLayer/NextButton
 
 var answer_locked := false
 
@@ -18,6 +19,7 @@ const DROP_IN_DURATION := 0.5
 
 
 func _ready() -> void:
+	next_button.visible = false
 	await _play_intro_sequence()
 
 
@@ -79,7 +81,7 @@ func _handle_answer(button: TextureButton, is_correct: bool) -> void:
 		answer_locked = true
 		right_answer.play()
 		await right_answer.finished
-		get_tree().change_scene_to_file("res://scene/third_play_scene.tscn")
+		next_button.visible = true
 	else:
 		wrong_answer.play()
 
@@ -91,3 +93,9 @@ func _press_scale_effect(button: TextureButton) -> void:
 	tween.tween_property(button, "scale", Vector2(0.9, 0.9), 0.08)
 	tween.tween_property(button, "scale", Vector2(1.05, 1.05), 0.08)
 	tween.tween_property(button, "scale", Vector2(1.0, 1.0), 0.06)
+
+
+func _on_next_button_pressed() -> void:
+	pressed_sound.play()
+	await MusicManager.splash_icon(next_button)
+	get_tree().change_scene_to_file("res://scene/third_play_scene.tscn")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bbrv5lklpw1fj" path="res://assets/background/background2.png" id="1_01aso"]
 [ext_resource type="Script" uid="uid://b6da8lwl5hi88" path="res://scene/first_play_scene.gd" id="1_2grop"]
-[ext_resource type="Texture2D" uid="uid://cdlto74mglpgp" path="res://assets/ui/backButton.png" id="2_dad7c"]
+[ext_resource type="Texture2D" uid="uid://bayjqbbgjthi8" path="res://assets/ui/Back.png" id="3_croyb"]
 [ext_resource type="Texture2D" uid="uid://dgyy4nhdsr0cv" path="res://assets/ui/leaf2.png" id="4_uc2pu"]
 [ext_resource type="Texture2D" uid="uid://6vobxcjsdw5u" path="res://assets/Character.png" id="5_em1ev"]
 [ext_resource type="Texture2D" uid="uid://2l1w152almt2" path="res://assets/oneLadyBird.png" id="6_em1ev"]
@@ -113,6 +113,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_01aso")
 
+[node name="BackButton" type="TextureButton" parent="CanvasLayer" unique_id=853342192]
+custom_minimum_size = Vector2(130, 130)
+offset_left = 43.0
+offset_top = 26.0
+offset_right = 173.0
+offset_bottom = 156.0
+texture_normal = ExtResource("3_croyb")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="SoundButton" type="TextureButton" parent="CanvasLayer" unique_id=1285570517]
 custom_minimum_size = Vector2(120, 120)
 anchors_preset = 1
@@ -128,14 +138,6 @@ texture_normal = SubResource("CompressedTexture2D_dad7c")
 texture_pressed = SubResource("CompressedTexture2D_2grop")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="BackButton" type="TextureButton" parent="CanvasLayer" unique_id=853342192]
-custom_minimum_size = Vector2(80, 80)
-offset_left = 48.0
-offset_top = 28.0
-offset_right = 128.0
-offset_bottom = 108.0
-texture_normal = ExtResource("2_dad7c")
 
 [node name="Leaf" type="TextureRect" parent="CanvasLayer" unique_id=506398363]
 custom_minimum_size = Vector2(500, 300)
@@ -459,6 +461,24 @@ texture = ExtResource("11_qjsta")
 visibility_rect = Rect2(-960, -540, 1920, 1080)
 process_material = SubResource("ParticleProcessMaterial_duicc")
 
+[node name="NextButton" type="TextureButton" parent="CanvasLayer" unique_id=56218375]
+custom_minimum_size = Vector2(130, 130)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -177.0
+offset_right = -80.0
+offset_bottom = -47.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_croyb")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
 [node name="PressedSound" type="AudioStreamPlayer" parent="." unique_id=1565061586]
 stream = SubResource("AudioStreamWAV_cjj5q")
 
@@ -474,9 +494,10 @@ stream = ExtResource("14_croyb")
 [node name="Question2" type="AudioStreamPlayer" parent="." unique_id=1691852191]
 stream = ExtResource("15_r5jkw")
 
-[connection signal="pressed" from="CanvasLayer/SoundButton" to="." method="_on_sound_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SoundButton" to="." method="_on_sound_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/AnswerBox1/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/AnswerBox2/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/AnswerBox3/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/AnswerBox4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/NextButton" to="." method="_on_next_button_pressed"]

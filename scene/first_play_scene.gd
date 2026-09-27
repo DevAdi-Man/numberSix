@@ -18,6 +18,7 @@ extends Node2D
 @onready var answer_box_4: Panel = $CanvasLayer/HBoxContainer/AnswerBox4
 @onready var question_1: AudioStreamPlayer = $Question1
 @onready var question_2: AudioStreamPlayer = $Question2
+@onready var next_button: TextureButton = $CanvasLayer/NextButton
 
 var answer_locked := false  # prevents spamming after the correct answer is found
 
@@ -31,6 +32,7 @@ const DROP_IN_DURATION := 0.5
 
 
 func _ready() -> void:
+	next_button.visible = false
 	# Give each panel its own unique StyleBoxFlat so tweening one
 	# doesn't affect the others (they'd share a resource otherwise).
 	for box in [answer_box_1, answer_box_2, answer_box_3, answer_box_4]:
@@ -164,7 +166,12 @@ func _ensure_unique_stylebox(box: Panel) -> void:
 
 
 func _go_to_next_scene() -> void:
-	# Wait so the player actually sees/hears the correct-answer feedback
-	# before the scene switches. Adjust the delay to taste.
-	await get_tree().create_timer(2.0).timeout
+	if right_answer.playing:
+		await right_answer.finished
+	next_button.visible = true
+
+
+func _on_next_button_pressed() -> void:
+	pressed_sound.play()
+	await MusicManager.splash_icon(next_button)
 	get_tree().change_scene_to_file("res://scene/second_play_scene.tscn")
